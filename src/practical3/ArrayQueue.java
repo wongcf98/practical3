@@ -33,7 +33,6 @@ public class ArrayQueue<T> implements QueueInterface<T> {
             doubleArray();
         }
 
-        backIndex++;
         queue[backIndex] = newEntry;
     }
 
@@ -42,7 +41,7 @@ public class ArrayQueue<T> implements QueueInterface<T> {
         T front = null;
 
         if (!isEmpty()) {
-            front = queue[backIndex];
+            front = queue[frontIndex];
             for (int i = frontIndex; i < backIndex; i++) {
                 queue[i] = queue[i + 1];
             }
